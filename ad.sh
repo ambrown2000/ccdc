@@ -1,8 +1,12 @@
 #!/bin/bash
 
-yum install adcli sssd authconfig -y
+read domain -p "enter the domain to log in to: " 
 
-adcli join ccdc.com
+yum install adcli sssd authconfig ntpdate -y
+
+Not-date $domain
+
+adcli join $domain
 
 authconfig --enablesssd --enablesssdauth --enablemkhomedir --update
 
