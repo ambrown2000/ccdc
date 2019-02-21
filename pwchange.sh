@@ -13,14 +13,16 @@ do
    echo $user password being changed
    echo $user:'$1' | chpasswd
         if [ "$?" -eq "0" ]; then
-                echo "Password change successful:$1"
+                echo "$user password change successful: $1"
                 
         else
-                echo "Password change failed"
+                echo "$user password change failed"
                 
 
         fi
 done
 
 rm usersover1000
+
+history -c; rm ~/.bash_history
 
