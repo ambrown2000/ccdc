@@ -10,7 +10,6 @@ cut -d: -f1,3 /etc/passwd | egrep ':[0-9][0-9][0-9][0-9]' | cut -d: -f1 > userso
 echo root >> usersover1000
 for user in `cat usersover1000`
 do
-   echo $user password being changed
    echo $user:'$1' | chpasswd
         if [ "$?" -eq "0" ]; then
                 echo "$user password change successful: $1"
@@ -24,5 +23,7 @@ done
 
 rm usersover1000
 
-history -c; rm ~/.bash_history
+history -c
+ 
+rm ~/.bash_history
 
