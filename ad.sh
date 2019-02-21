@@ -1,6 +1,8 @@
 #!/bin/bash
 
-read domain -p "enter the domain to log in to: " 
+echo "enter domain to log in to: "
+
+read domain 
 
 yum install adcli sssd authconfig ntpdate -y
 
