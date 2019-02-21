@@ -6,7 +6,7 @@ read domain
 
 yum install adcli sssd authconfig ntpdate -y
 
-Not-date $domain
+ntpdate $domain
 
 adcli join $domain
 
